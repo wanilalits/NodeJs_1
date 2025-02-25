@@ -213,6 +213,7 @@ else{
 
 app.all('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/products.html'));
+  res.status(201).send('Unknown Request');
 });
 
 
