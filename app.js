@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const MySchema = require("./schema");
 var bodyParser = require('body-parser')
 const jwt = require('jsonwebtoken');
-
+const path = require('path');
 const app = express();
 
 
@@ -212,8 +212,7 @@ else{
 
 
 app.all('*', (req, res) => {
-  res.status(202).send('<h1>404! Page not found</h1>');
- 
+  res.sendFile(path.join(__dirname, '/products.html'));
 });
 
 
